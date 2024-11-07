@@ -9,39 +9,11 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                echo 'Building the project...'
-                // Add build commands here (e.g., `mvn clean install` for Maven)
-            }
-        }
-
         stage('Test') {
             steps {
                 echo 'Running tests...'
                 // Add test commands here (e.g., `npm test` or `pytest`)
             }
-        }
-
-        stage('Code Analysis') {
-            steps {
-                echo 'Running code analysis...'
-                // Add code analysis tools here (e.g., `sonar-scanner`)
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying the project...'
-                // Add deployment commands here (e.g., `scp` or `kubectl apply`)
-            }
-        }
-    }
-
-    post {
-        always {
-            echo 'Cleaning up workspace...'
-            deleteDir() // Clean up the workspace after the build
         }
     }
 }
